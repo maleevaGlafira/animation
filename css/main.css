@@ -84,9 +84,8 @@ body {
     width: 200px;
     top: 18px;
 }
-.road1 img {
-   
-   
+
+.road1 img {    
     animation-name: drive;  
     animation-duration: 6s;
     animation-fill-mode: both;
@@ -147,27 +146,27 @@ body {
     0% {
        top: 0px; 
         left:0;
-        transform: scale(1, 1), rotateZ(0);
+        transform: scale(1, 1);
         
     }
   
     45% {
-        top: -200px;
+        top: -220px;
         left:100%;
-         transform: scale(1, 1), rotateZ(0);;
+         transform: scale(1, 1);
     }
     55%{
          
-        top: -200px;
+        top: -220px;
         left:100%;
-        transform: scale(-1, 1),rotateZ(20deg);
+        transform: scale(-1, 1);
     }
    
     
     98% {
         top: 0px;
         left:0;
-        transform: scale(-1, 1) ,  rotateZ(20deg);
+        transform: scale(-1,1) ;
     }
 }
 @keyframes wild {
