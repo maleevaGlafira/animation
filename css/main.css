@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+* {
+    box-sizing: border-box;
+}
+.wrapper {
+    position: relative;
+   
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.sky{
+    position: relative;
+    height: 200px;
+     background: lightblue;
+}
+.cloud {
+   position: absolute;
+    left: 0%;
+    width:  200px;
+    height: 200px;
+    display: block;
+    
+/*    transform: translate(0, 100%) scale(1);*/
+    animation: wild 20s linear 3s infinite both;
+   /* animation-direction:normal;*/
+}
+
+.cloud-left{
+    left: 0;
+    animation: wild-left 20s linear 1s infinite both ;
+    animation-direction:normal;
+    transform: rotateZ(80deg);
+}
+.sun{
+    left:0;
+   animation: wild 40s linear 0s infinite both;
+    
+}
+.hover-me {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    border-radius: 100%;
+    text-align: center;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+    background: pink;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background 3s, transform 0.5s;
+}
+.hover-me:hover {
+    background: blue;
+    transform:translateX(200px);
+}
+.grass {
+    height: 100px;
+    background: green;
+}
+.road1 , .road2 , .road{
+    position: relative;
+    width: 100%;
+   
+}
+.road1{
+    height:110px;
+    background: url("../img/road2.jpg");
+}
+.road {
+    height: 350px;
+    background: url("../img/road.jpeg");
+   
+}
+.road1 img, .road2 img{
+    position: absolute;
+    width: 200px;
+    top: 18px;
+}
+.road1 img {
+   
+   
+    animation-name: drive;  
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    animation-iteration-count:infinite;
+    animation-direction: normal;
+     animation-timing-function: cubic-bezier(.14,.73,.28,.99);
+    animation-delay: 1s;
+    transform: translateX(-200px);
+    
+    
+}
+.road1 img:nth-child(1){
+    right: 100%; 
+   
+}
+
+.road1 img:nth-child(2){
+    left:100%;
+    animation-name: drive1;
+    transform: scale(-1, 1);
+    
+}
+.road2 img:nth-child(1) {
+    left: 0;
+    top: 0;
+    animation-name: jump;
+    animation-duration: 5s;
+    animation-fill-mode:backwards;
+    animation-iteration-count:infinite;
+    animation-direction: normal;
+    animation-timing-function:ease-in-out;
+    
+}
+
+.road2{
+    height:110px;
+    background: url("../img/road3.jpg");
+}
+
+
+
+@keyframes drive{
+    0{
+        right: 100%;
+    }
+    50%{right: 40%;}
+    100%{right: 100%;}
+}
+
+@keyframes drive1{
+    0{
+        left: 100%;
+    }
+    50%{left: 50%;}
+    100%{left: 100%;}
+}
+@keyframes jump{
+    0% {
+       top: 0px; 
+        left:0;
+        transform: scale(1, 1), rotateZ(0);
+        
+    }
+  
+    45% {
+        top: -200px;
+        left:100%;
+         transform: scale(1, 1), rotateZ(0);;
+    }
+    55%{
+         
+        top: -200px;
+        left:100%;
+        transform: scale(-1, 1),rotateZ(20deg);
+    }
+   
+    
+    98% {
+        top: 0px;
+        left:0;
+        transform: scale(-1, 1) ,  rotateZ(20deg);
+    }
+}
+@keyframes wild {
+    from {
+       transform: translateX(-200px)
+    }
+    to {
+        
+       transform: translateX(1524px)
+    }
+}
+
+@keyframes wild-left {
+  from {
+        transform: translateX(1524px) rotateZ(180deg); 
+    }
+    to {
+        
+       transform: translateX(-200px) rotateZ(180deg);
+    }
+    
+    
+}
+
